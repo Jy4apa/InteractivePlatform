@@ -1,0 +1,65 @@
+version: "3.7"
+
+volumes:
+  db_data_local: {}
+
+services:
+  app:
+    build: docker/php
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+      - mailcatcher
+    env_file:
+      - .env
+    networks:
+      - private_network
+
+  nginx:
+    image: nginx:1.12-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/app
+      - ./docker/nginx/vhost.conf:/etc/nginx/conf.d/vhost.conf
+    depends_on:
+      - app
+    networks:
+      - private_network
+
+  mailcatcher:
+    image: schickling/mailcatcher:latest
+    ports:
+      - "1080:1080"
+    networks:
+      - private_network
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data_local:/var/lib/mysql
+      - ./docker/mysql/config.cnf:/etc/mysql/conf.d/config.cnf
+      - ./storage/temp:/temp/dump
+    ports:
+      - "3306:3306"
+    depends_on:
+      - redis
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: platform
+      MYSQL_USER: platform
+      MYSQL_PASSWORD: aaaaaa
+    networks:
+      - private_network
+
+  redis:
+    image: redis:3.2.12
+    ports:
+      - "6379:6379"
+    networks:
+      - private_network
+
+networks:
+  private_network:
+    driver: bridge

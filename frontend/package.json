@@ -1,0 +1,45 @@
+{
+  "name": "youth-career-projects",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.3",
+    "@heroicons/vue": "^2.0.12",
+    "@import-meta-env/unplugin": "^0.1.10",
+    "@uppy/core": "^3.0.4",
+    "@uppy/dashboard": "^3.1.0",
+    "@uppy/drag-drop": "^3.0.1",
+    "@uppy/locales": "^3.0.3",
+    "@uppy/url": "^3.1.0",
+    "@vuepic/vue-datepicker": "^5.1.2",
+    "axios": "^1.1.2",
+    "cropperjs": "^1.5.6",
+    "humps": "^2.0.1",
+    "lodash": "^4.17.21",
+    "maska": "^1.5.0",
+    "vee-validate": "^4.5.6",
+    "vue": "^3.2.38",
+    "vue-multiselect": "^3.0.0-alpha.2",
+    "vue-router": "^4.1.5",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue-yandex-maps": "^0.12.7",
+    "vuex": "^4.0.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@import-meta-env/cli": "^0.1.7",
+    "@tailwindcss/forms": "^0.5.3",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "autoprefixer": "^10.4.12",
+    "eslint": "^8.25.0",
+    "eslint-plugin-vue": "^9.6.0",
+    "postcss": "^8.4.17",
+    "sass": "^1.55.0",
+    "tailwindcss": "^3.1.8",
+    "vite": "^3.0.9",
+    "vite-plugin-svg-icons": "^2.0.1"
+  }
+}

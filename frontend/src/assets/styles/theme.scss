@@ -1,0 +1,16 @@
+// * Config
+@import 'config/_vendor.scss';
+@import 'config/_variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  height: 100%;
+}
